@@ -1,0 +1,3333 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Bagus Eka Wijaya | Electronic Engineer & Specialist</title>
+  <meta name="description" content="Portofolio Resmi Muhammad Bagus Eka Wijaya - Electronic Engineer & Specialist. Mahasiswa Sarjana Terapan Teknik Elektronika PENS, spesialis perancangan PCB 2D/3D (KiCad, EasyEDA), 3D Modeling Onshape, Wiring, dan Hardware Elektronika." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: #161f33;
+      --bg-card-hover: #1e293b;
+      --bg-black: #05070d;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-blue: #2563eb;
+      --accent-blue-light: #3b82f6;
+      --accent-blue-glow: rgba(59, 130, 246, 0.55);
+      --accent-blue-soft: rgba(37, 99, 235, 0.15);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-blue: rgba(59, 130, 246, 0.45);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --container-width: 1220px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       2. KEYFRAME ANIMATIONS & SCROLL REVEAL
+       ========================================================================== */
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(60px) scale(0.94);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes fadeLoop {
+      0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 18px rgba(59, 130, 246, 0.65);
+      }
+      50% {
+        opacity: 0.22;
+        text-shadow: 0 0 0px rgba(59, 130, 246, 0);
+      }
+    }
+
+    @keyframes pulseWhite {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.65), 0 8px 25px rgba(37, 99, 235, 0.4);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 14px rgba(255, 255, 255, 0), 0 12px 32px rgba(59, 130, 246, 0.65);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 8px 25px rgba(37, 99, 235, 0.4);
+      }
+    }
+
+    @keyframes bounceUp {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+      40% {
+        transform: translate(-50%, -10px);
+      }
+      60% {
+        transform: translate(-50%, -5px);
+      }
+    }
+
+    @keyframes circuitPulse {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 0.85;
+      }
+    }
+
+    @keyframes signalFlow {
+      0% {
+        stroke-dashoffset: 600;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes floatOrb1 {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(80px, -60px) scale(1.12);
+      }
+      66% {
+        transform: translate(-50px, 50px) scale(0.92);
+      }
+    }
+
+    @keyframes floatOrb2 {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(-90px, -70px) scale(1.15);
+      }
+    }
+
+    /* Global Animated Background Canvas & Ambient Orbs */
+    #bgCircuitCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .ambient-bg-orbs {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(95px);
+      opacity: 0.28;
+    }
+
+    .ambient-orb.orb-1 {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, #2563eb 0%, transparent 70%);
+      top: 8%;
+      left: -8%;
+      animation: floatOrb1 18s ease-in-out infinite;
+    }
+
+    .ambient-orb.orb-2 {
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+      bottom: 10%;
+      right: -10%;
+      animation: floatOrb2 22s ease-in-out infinite;
+    }
+
+    .ambient-orb.orb-3 {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
+      top: 48%;
+      left: 42%;
+      opacity: 0.16;
+      animation: floatOrb1 25s ease-in-out infinite reverse;
+    }
+
+    .signal-trace {
+      stroke-dasharray: 45 260;
+      animation: signalFlow 5.5s linear infinite;
+      filter: drop-shadow(0 0 6px #60a5fa);
+    }
+
+    .signal-trace.fast {
+      stroke-dasharray: 35 220;
+      animation: signalFlow 3.8s linear infinite;
+    }
+
+    .signal-trace.reverse {
+      stroke-dasharray: 50 280;
+      animation: signalFlow 6.5s linear infinite reverse;
+    }
+
+    /* Scroll Reveal Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       3. NAVBAR (STICKY TOP)
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 22px 0;
+      background: transparent;
+      transition: all 0.35s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar.scrolled {
+      padding: 14px 0;
+      background: rgba(5, 7, 13, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    .brand-logo .dot {
+      color: var(--accent-blue-light);
+      font-size: 2rem;
+      line-height: 0.5;
+      text-shadow: 0 0 12px var(--accent-blue-glow);
+    }
+
+    .brand-logo:hover {
+      transform: translateY(-1px);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.25s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent-blue-light);
+      box-shadow: 0 0 8px var(--accent-blue-glow);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent-blue-light);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-plus-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.16);
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      color: var(--text-primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      line-height: 1;
+    }
+
+    .nav-plus-btn:hover {
+      background: var(--accent-blue);
+      color: #ffffff;
+      transform: rotate(90deg) scale(1.08);
+      box-shadow: 0 0 18px var(--accent-blue-glow);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Quick Social Icon Stack when clicking '+' (Matches Screenshot Model) */
+    .quick-panel {
+      position: fixed;
+      top: 78px;
+      right: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px) scale(0.95);
+      transition: var(--transition-smooth);
+    }
+
+    .quick-panel.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .social-square-btn {
+      position: relative;
+      width: 58px;
+      height: 58px;
+      background: #0b0f19;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+      transition: var(--transition-smooth);
+    }
+
+    .social-square-btn:hover {
+      border-color: var(--accent-blue-light);
+      transform: translateX(-4px) scale(1.05);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8), 0 0 18px rgba(59, 130, 246, 0.45);
+    }
+
+    .social-square-btn.accent-yellow {
+      background: #f5b301;
+      border-color: #f5b301;
+      color: #0b0f19;
+    }
+
+    .social-square-btn.accent-yellow:hover {
+      background: #ffc425;
+      border-color: #ffffff;
+      box-shadow: 0 0 22px rgba(245, 179, 1, 0.65);
+    }
+
+    .social-square-tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      background: #0b0f19;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(8px);
+      transition: all 0.22s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+    }
+
+    .social-square-btn:hover .social-square-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION (BERANDA)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 90px;
+      background-color: transparent;
+      overflow: hidden;
+    }
+
+    /* Electronic Circuit SVG Background Pattern */
+    .hero-circuit-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 18% 30%, rgba(37, 99, 235, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 82% 65%, rgba(59, 130, 246, 0.16) 0%, transparent 50%);
+    }
+
+    .hero-circuit-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.42;
+      animation: circuitPulse 6s ease-in-out infinite;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    /* Left Column */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-title {
+      font-size: clamp(2.35rem, 4.6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      animation: slideInLeft 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #ffffff 0%, #93c5fd 50%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-mono);
+      font-size: clamp(1.02rem, 1.85vw, 1.38rem);
+      font-weight: 700;
+      letter-spacing: 3.2px;
+      color: var(--accent-blue-light);
+      text-transform: uppercase;
+      margin-bottom: 38px;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent-blue-light);
+      animation: fadeLoop 2.8s ease-in-out infinite;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 34px;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-primary-blue {
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
+      color: #ffffff;
+      border: 2px solid transparent;
+      box-shadow: 0 8px 28px rgba(37, 99, 235, 0.55), 0 0 18px rgba(59, 130, 246, 0.45);
+    }
+
+    .btn-primary-blue:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.75), 0 0 28px rgba(59, 130, 246, 0.75);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .btn-outline-white:hover {
+      transform: scale(1.05) translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-blue-light);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(59, 130, 246, 0.45);
+    }
+
+    /* Right Column - Profile Image */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-photo-wrapper {
+      position: relative;
+      width: 380px;
+      height: 440px;
+      border-radius: 28px;
+      padding: 10px;
+      background: linear-gradient(145deg, rgba(59, 130, 246, 0.65), rgba(17, 24, 39, 0.3), rgba(37, 99, 235, 0.75));
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(37, 99, 235, 0.3);
+    }
+
+    .hero-photo-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border-radius: 36px;
+      border: 1px dashed rgba(59, 130, 246, 0.35);
+      pointer-events: none;
+    }
+
+    .hero-photo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    .hero-photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-photo-wrapper:hover .hero-photo-inner img {
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================================
+       5. PROFILE SECTION (ABOUT, SKILL, EDUCATION & EXPERIENCE)
+       ========================================================================== */
+    .profile-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(11, 15, 25, 0.55) 0%, rgba(13, 19, 34, 0.72) 100%);
+    }
+
+    .profile-card {
+      background: rgba(22, 31, 51, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 26px;
+      padding: 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-light), transparent);
+    }
+
+    /* Vertical Tab Sidebar on the Left */
+    .profile-tabs-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      padding: 12px 0;
+    }
+
+    .profile-tabs-nav::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 0;
+    }
+
+    .profile-tab-btn {
+      position: relative;
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: var(--bg-secondary);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .profile-tab-btn svg {
+      width: 26px;
+      height: 26px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-tab-btn:hover {
+      border-color: var(--accent-blue-light);
+      color: #ffffff;
+      transform: scale(1.06);
+    }
+
+    .profile-tab-btn.active {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-light));
+      border-color: var(--accent-blue-light);
+      color: #ffffff;
+      box-shadow: 0 0 25px var(--accent-blue-glow);
+      transform: scale(1.08);
+    }
+
+    .profile-tab-tooltip {
+      position: absolute;
+      left: calc(100% + 12px);
+      background: #05070d;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-6px);
+      transition: all 0.25s ease;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+    }
+
+    .profile-tab-btn:hover .profile-tab-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Tab Content Area */
+    .profile-tab-content {
+      display: none;
+      animation: fadeTab 0.45s ease forwards;
+    }
+
+    .profile-tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeTab {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tab-header {
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tab-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tab-title-accent {
+      width: 10px;
+      height: 26px;
+      border-radius: 4px;
+      background: var(--accent-blue-light);
+      box-shadow: 0 0 12px var(--accent-blue-glow);
+    }
+
+    .tab-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-blue-light);
+      background: rgba(37, 99, 235, 0.14);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    /* TAB 1: ABOUT ME */
+    .about-me-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .about-avatar-ring {
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--accent-blue), #60a5fa);
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+      margin-bottom: 24px;
+    }
+
+    .about-avatar-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      border: 4px solid var(--bg-card);
+    }
+
+    .about-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .about-role {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--accent-blue-light);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .about-bio {
+      font-size: 1.03rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 30px;
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .about-bio strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .cv-competencies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .competency-card {
+      background: rgba(11, 15, 25, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 18px 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .competency-card:hover {
+      border-color: var(--border-blue);
+      transform: translateY(-4px);
+    }
+
+    .competency-title {
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-blue-light);
+      margin-bottom: 8px;
+    }
+
+    .competency-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* TAB 2: MY SKILL */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .skill-item {
+      background: rgba(11, 15, 25, 0.55);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 16px 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .skill-item:hover {
+      border-color: var(--border-blue);
+      background: rgba(11, 15, 25, 0.85);
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .skill-percent {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-blue-light);
+    }
+
+    .skill-bar-track {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-blue), #60a5fa);
+      border-radius: 999px;
+      box-shadow: 0 0 14px var(--accent-blue-glow);
+      transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* TAB 3: EDUCATION & EXPERIENCE */
+    .resume-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .resume-group-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-blue-light);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .timeline-list {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid rgba(59, 130, 246, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .timeline-card {
+      position: relative;
+      background: rgba(11, 15, 25, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 24px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-blue-light);
+      border: 3px solid var(--bg-card);
+      box-shadow: 0 0 10px var(--accent-blue-glow);
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-blue);
+      transform: translateX(4px);
+    }
+
+    .timeline-period {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #93c5fd;
+      background: rgba(37, 99, 235, 0.18);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .timeline-org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-blue-light);
+      margin-bottom: 10px;
+    }
+
+    .timeline-bullets {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .timeline-desc {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       6. MY PORTFOLIO SECTION
+       ========================================================================== */
+    .portfolio-section {
+      padding: 100px 0 110px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(11, 15, 25, 0.45);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-icon-wrap {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: var(--accent-blue-light);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.25);
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.2vw, 2.55rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .section-underline {
+      width: 84px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--accent-blue-light), transparent);
+      margin: 0 auto 14px;
+      border-radius: 999px;
+      position: relative;
+    }
+
+    .section-underline::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-blue-light);
+      box-shadow: 0 0 12px var(--accent-blue-glow);
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* Filter Badges */
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .filter-badge {
+      padding: 11px 26px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-badge:hover {
+      color: #ffffff;
+      border-color: var(--accent-blue-light);
+      transform: translateY(-2px);
+    }
+
+    .filter-badge.active {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-light));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 6px 22px rgba(37, 99, 235, 0.5);
+    }
+
+    /* 3-Column Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .portfolio-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.4s ease,
+                  box-shadow 0.4s ease;
+    }
+
+    .portfolio-card.hidden-card {
+      display: none;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-blue);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(37, 99, 235, 0.28);
+    }
+
+    .portfolio-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .portfolio-card:hover .portfolio-thumb {
+      transform: scale(1.12);
+    }
+
+    /* Dark Transparent Hover Overlay */
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(5, 7, 13, 0.25) 0%,
+        rgba(11, 15, 25, 0.82) 55%,
+        rgba(5, 7, 13, 0.96) 100%
+      );
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 26px;
+      transition: opacity 0.38s ease;
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    /* Action Buttons (Top-Right inside Overlay) */
+    .portfolio-actions {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      transform: translateY(-14px);
+      opacity: 0;
+      transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+    }
+
+    .portfolio-card:hover .portfolio-actions {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .action-circle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #0b0f19;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      transition: var(--transition-smooth);
+    }
+
+    .action-circle-btn:hover {
+      background: var(--accent-blue-light);
+      color: #ffffff;
+      transform: scale(1.12);
+      box-shadow: 0 0 18px var(--accent-blue-glow);
+    }
+
+    /* Slide-Up Text Content */
+    .portfolio-info {
+      transform: translateY(24px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.06s;
+    }
+
+    .portfolio-card:hover .portfolio-info {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .portfolio-cat {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-blue-light);
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .portfolio-item-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .portfolio-spec {
+      font-size: 0.83rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+
+    /* Empty State for Certificate Filter if needed */
+    .portfolio-empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 56px 24px;
+      background: var(--bg-card);
+      border: 1px dashed rgba(59, 130, 246, 0.4);
+      border-radius: 20px;
+      color: var(--text-secondary);
+      display: none;
+    }
+
+    /* ==========================================================================
+       7. LIGHTBOX MODAL
+       ========================================================================== */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(5, 7, 13, 0.94);
+      backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.32s ease;
+      padding: 24px;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-content-wrapper {
+      position: relative;
+      max-width: 1020px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img-container {
+      width: 100%;
+      max-height: 76vh;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      background: #080b12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 74vh;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox-caption-bar {
+      width: 100%;
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 22px;
+      background: rgba(22, 31, 51, 0.9);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+    }
+
+    .lightbox-caption-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .lightbox-caption-sub {
+      font-size: 0.84rem;
+      color: var(--accent-blue-light);
+      font-family: var(--font-mono);
+    }
+
+    .lightbox-counter {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .lightbox-nav-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(22, 31, 51, 0.9);
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      z-index: 2010;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: var(--accent-blue);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 0 22px var(--accent-blue-glow);
+    }
+
+    .lightbox-prev {
+      left: 28px;
+    }
+
+    .lightbox-next {
+      right: 28px;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 26px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      z-index: 2010;
+    }
+
+    .lightbox-close:hover {
+      background: #ef4444;
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    /* ==========================================================================
+       8. PRE-FOOTER CTA (ASYMMETRIC INVERTED TRAPEZOID)
+       ========================================================================== */
+    .prefooter-cta-section {
+      padding: 30px 0 70px;
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trapezoid-cta-wrapper {
+      filter: drop-shadow(0 22px 45px rgba(0, 0, 0, 0.8))
+              drop-shadow(0 0 25px rgba(37, 99, 235, 0.28));
+    }
+
+    .trapezoid-cta-card {
+      background: linear-gradient(145deg, #03050a 0%, #070b14 60%, #0c162c 100%);
+      clip-path: polygon(0 0, 100% 6%, 96% 100%, 4% 94%);
+      padding: 76px 36px;
+      text-align: center;
+      position: relative;
+      border-top: 2px solid rgba(59, 130, 246, 0.5);
+    }
+
+    .trapezoid-cta-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-blue-light);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .trapezoid-cta-title {
+      font-size: clamp(1.65rem, 3.2vw, 2.65rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .btn-hire-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #ffffff;
+      color: #05070d;
+      font-size: 0.94rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 16px 42px;
+      border-radius: 9999px;
+      cursor: pointer;
+      animation: pulseWhite 2.2s infinite;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-hire-white:hover {
+      background: var(--accent-blue-light);
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       9. CONTACT ME SECTION
+       ========================================================================== */
+    .contact-section {
+      padding: 80px 0 120px;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(11, 15, 25, 0.45) 0%, rgba(8, 12, 21, 0.78) 100%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: stretch;
+    }
+
+    /* Left Form */
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(11, 15, 25, 0.85);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 15px 18px;
+      color: #ffffff;
+      font-size: 0.96rem;
+      transition: all 0.28s ease;
+    }
+
+    .form-control::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-blue-light);
+      background: #0b0f19;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18), 0 0 18px rgba(37, 99, 235, 0.35);
+    }
+
+    textarea.form-control {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    .btn-submit-blue {
+      width: 100%;
+      padding: 16px 32px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.5);
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-submit-blue:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.75);
+    }
+
+    .form-feedback {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      color: #86efac;
+    }
+
+    /* Right White Info Card */
+    .contact-info-card {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .info-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      transition: var(--transition-smooth);
+    }
+
+    .info-block:hover {
+      border-color: var(--accent-blue-light);
+      transform: translateX(4px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+    }
+
+    .info-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-light));
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .info-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .info-value a:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       10. FOOTER & OVERLAPPING SCROLL-TO-TOP
+       ========================================================================== */
+    .site-footer {
+      position: relative;
+      background-color: #03050a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 52px 0 38px;
+      text-align: center;
+    }
+
+    .scroll-top-btn {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-light));
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.65), 0 0 0 6px #03050a;
+      transition: var(--transition-smooth);
+      z-index: 10;
+    }
+
+    .scroll-top-btn:hover {
+      animation: bounceUp 0.8s ease infinite;
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.9), 0 0 0 6px #03050a;
+    }
+
+    .footer-copyright {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .footer-copyright strong {
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       11. RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 44px;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-subtitle {
+        padding-left: 0;
+        border-left: none;
+        border-bottom: 2px solid var(--accent-blue-light);
+        padding-bottom: 6px;
+      }
+
+      .hero-cta-group {
+        justify-content: center;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .resume-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv-competencies-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 16px;
+        right: 16px;
+        background: rgba(11, 15, 25, 0.98);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--border-blue);
+        border-radius: 18px;
+        flex-direction: column;
+        padding: 24px;
+        gap: 18px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: var(--transition-smooth);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+      }
+
+      .nav-links.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+      }
+
+      .profile-card {
+        grid-template-columns: 1fr;
+        padding: 28px 22px;
+        gap: 28px;
+      }
+
+      .profile-tabs-nav {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .profile-tabs-nav::before {
+        top: 50%;
+        bottom: auto;
+        left: 20%;
+        right: 20%;
+        width: auto;
+        height: 2px;
+        transform: translateY(-50%);
+      }
+
+      .profile-tab-tooltip {
+        display: none;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo-wrapper {
+        width: 300px;
+        height: 360px;
+      }
+
+      .trapezoid-cta-card {
+        clip-path: polygon(0 0, 100% 3%, 98% 100%, 2% 97%);
+        padding: 56px 20px;
+      }
+
+      .lightbox-nav-btn {
+        top: auto;
+        bottom: 24px;
+        transform: none;
+      }
+
+      .lightbox-nav-btn:hover {
+        transform: scale(1.08);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       0. GLOBAL ANIMATED ELECTRONIC CIRCUIT & PARTICLE BACKGROUND
+       ======================================================================== -->
+  <div class="ambient-bg-orbs" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+  <canvas id="bgCircuitCanvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================================
+       1. STICKY NAVBAR
+       ======================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#homepage" class="brand-logo" aria-label="MyPortofolio Home">
+        MyPortofolio<span class="dot">.</span>
+      </a>
+
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#homepage" class="nav-link active">HOMEPAGE</a></li>
+            <li><a href="#profile" class="nav-link">PROFILE</a></li>
+            <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
+            <li><a href="#contact" class="nav-link">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-plus-btn" id="plusToggleBtn" title="Quick Contact & LinkedIn" aria-label="Quick Info">
+          +
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Social Icon Stack (+) matching Screenshot Model -->
+    <div class="quick-panel" id="quickPanel">
+      <!-- 1. WhatsApp -->
+      <a href="https://wa.me/6283192982046" target="_blank" rel="noopener" class="social-square-btn" aria-label="WhatsApp">
+        <span class="social-square-tooltip">WhatsApp (083192982046)</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2Z" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.56 14.45C16.31 14.32 15.09 13.72 14.86 13.64C14.63 13.56 14.47 13.51 14.3 13.76C14.13 14.01 13.66 14.57 13.51 14.74C13.37 14.91 13.22 14.93 12.97 14.8C12.72 14.67 11.92 14.41 10.97 13.56C10.23 12.9 9.73 12.09 9.59 11.84C9.45 11.59 9.58 11.45 9.7 11.33C9.81 11.22 9.95 11.04 10.07 10.9C10.19 10.76 10.23 10.65 10.32 10.48C10.4 10.31 10.36 10.17 10.3 10.04C10.24 9.91 9.74 8.69 9.53 8.19C9.33 7.7 9.13 7.77 8.98 7.76C8.84 7.75 8.67 7.75 8.5 7.75C8.33 7.75 8.06 7.81 7.83 8.06C7.6 8.31 6.96 8.91 6.96 10.13C6.96 11.35 7.85 12.53 7.97 12.7C8.09 12.87 9.72 15.38 12.21 16.45C12.8 16.71 13.26 16.86 13.62 16.98C14.21 17.17 14.75 17.14 15.18 17.08C15.66 17.01 16.65 16.48 16.86 15.89C17.07 15.3 17.07 14.8 17.01 14.7C16.95 14.6 16.81 14.57 16.56 14.45Z" fill="#25D366"/>
+        </svg>
+      </a>
+
+      <!-- 2. Gmail -->
+      <a href="mailto:m.bagusekawijaya@gmail.com" class="social-square-btn" aria-label="Gmail">
+        <span class="social-square-tooltip">m.bagusekawijaya@gmail.com</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M2 6.5V18C2 19.1 2.9 20 4 20H6V9.8L12 14.3L18 9.8V20H20C21.1 20 22 19.1 22 18V6.5C22 4.68 19.92 3.64 18.46 4.73L12 9.58L5.54 4.73C4.08 3.64 2 4.68 2 6.5Z" fill="#EA4335"/>
+          <path d="M2 6.5V18C2 19.1 2.9 20 4 20H6V9.8L2 6.8V6.5Z" fill="#4285F4"/>
+          <path d="M22 6.5V18C22 19.1 21.1 20 20 20H18V9.8L22 6.8V6.5Z" fill="#34A853"/>
+          <path d="M18 9.8V4.9L22 6.5C22 5.2 20.5 3.8 18.46 4.73L18 5.08V9.8Z" fill="#FBBC05"/>
+        </svg>
+      </a>
+
+      <!-- 3. LinkedIn -->
+      <a href="https://www.linkedin.com/in/muhammad-bagus-eka-wijaya-2a7b53438" target="_blank" rel="noopener" class="social-square-btn" aria-label="LinkedIn">
+        <span class="social-square-tooltip">LinkedIn</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/>
+          <path d="M8.2 10.2H5.6V18.4H8.2V10.2ZM6.9 6.1C6.05 6.1 5.4 6.75 5.4 7.6C5.4 8.45 6.05 9.1 6.9 9.1C7.75 9.1 8.4 8.45 8.4 7.6C8.4 6.75 7.75 6.1 6.9 6.1ZM18.6 13.7C18.6 11.35 17.35 10 15.3 10C13.95 10 13.25 10.75 12.95 11.3V10.2H10.45V18.4H13.05V14.15C13.05 13.05 13.3 12.1 14.55 12.1C15.8 12.1 16 13.2 16 14.2V18.4H18.6V13.7Z" fill="#FFFFFF"/>
+        </svg>
+      </a>
+
+      <!-- 4. Instagram -->
+      <a href="https://www.instagram.com/ekawijaya23/" target="_blank" rel="noopener" class="social-square-btn" aria-label="Instagram">
+        <span class="social-square-tooltip">Instagram (@ekawijaya23)</span>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <defs>
+            <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f09433"/>
+              <stop offset="25%" stop-color="#e6683c"/>
+              <stop offset="50%" stop-color="#dc2743"/>
+              <stop offset="75%" stop-color="#cc2366"/>
+              <stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#igGrad)"/>
+          <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="3.8" stroke="#FFFFFF" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="3.2" stroke="#FFFFFF" stroke-width="1.6"/>
+          <circle cx="16.1" cy="7.9" r="1" fill="#FFFFFF"/>
+        </svg>
+      </a>
+
+      <!-- 5. Bottom Yellow Document/CV Action Box (Matches Screenshot) -->
+      <a href="#profile" class="social-square-btn accent-yellow" id="quickCvBtn" aria-label="View CV & Profile">
+        <span class="social-square-tooltip">Lihat Profil &amp; CV</span>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0b0f19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v12"/>
+          <path d="M14 2v5h5"/>
+          <path d="M18 14v-7l-4-5"/>
+          <path d="M4 15h4l2 2h4l2-2h4v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION (BERANDA)
+       ======================================================================== -->
+  <section class="hero-section" id="homepage">
+    <!-- Electronic Circuit Board SVG Motif Background -->
+    <div class="hero-circuit-bg">
+      <svg class="hero-circuit-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="traceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.45" />
+            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.05" />
+          </linearGradient>
+        </defs>
+        <g stroke="url(#traceGrad)" stroke-width="1.6" fill="none">
+          <path d="M0 140 H240 L290 190 H520 L560 150 H840" />
+          <path d="M0 320 H160 L210 270 H440 L490 320 H740" />
+          <path d="M0 680 H310 L360 630 H650 L710 690 H1050" />
+          <path d="M1440 220 H1150 L1100 270 H880 L830 220 H660" />
+          <path d="M1440 520 H1200 L1140 580 H920 L870 530 H700" />
+          <path d="M1440 760 H1080 L1020 700 H780" />
+          <path d="M380 0 V120 L430 170 V390" />
+          <path d="M980 0 V180 L930 230 V460" />
+          <path d="M640 900 V720 L690 670 V480" />
+        </g>
+        <!-- Animated Electric Signal Pulses along Traces -->
+        <g stroke="#60a5fa" stroke-width="2.4" stroke-linecap="round" fill="none">
+          <path class="signal-trace" d="M0 140 H240 L290 190 H520 L560 150 H840" />
+          <path class="signal-trace fast" d="M0 320 H160 L210 270 H440 L490 320 H740" />
+          <path class="signal-trace reverse" d="M0 680 H310 L360 630 H650 L710 690 H1050" />
+          <path class="signal-trace fast" d="M1440 220 H1150 L1100 270 H880 L830 220 H660" />
+          <path class="signal-trace reverse" d="M1440 520 H1200 L1140 580 H920 L870 530 H700" />
+          <path class="signal-trace" d="M380 0 V120 L430 170 V390" />
+          <path class="signal-trace fast" d="M980 0 V180 L930 230 V460" />
+        </g>
+        <g fill="#3b82f6" opacity="0.65">
+          <circle cx="290" cy="190" r="4.5" />
+          <circle cx="560" cy="150" r="4.5" />
+          <circle cx="840" cy="150" r="5.5" />
+          <circle cx="210" cy="270" r="4.5" />
+          <circle cx="740" cy="320" r="5" />
+          <circle cx="360" cy="630" r="4.5" />
+          <circle cx="1100" cy="270" r="5" />
+          <circle cx="920" cy="580" r="4.5" />
+          <circle cx="430" cy="390" r="5" />
+          <circle cx="930" cy="460" r="5" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="container hero-grid">
+      <!-- Left Content (Clean: Title, Subtitle with fadeLoop, and 2 CTA Pill Buttons) -->
+      <div class="hero-content">
+        <h1 class="hero-title">
+          MUHAMMAD BAGUS <span>EKA WIJAYA</span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+          ELECTRONIC ENGINEER | SPECIALIST
+        </h2>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn-pill btn-primary-blue">
+            <span>HIRE ME</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#portfolio" class="btn-pill btn-outline-white">
+            <span>MY PROJECT</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Content: Clean Profile Photo without Floating Chips -->
+      <div class="hero-visual">
+        <div class="hero-photo-wrapper">
+          <div class="hero-photo-inner">
+            <img src="profil.jpg" onerror="this.onerror=null;this.src='profil.jpeg';" alt="Muhammad Bagus Eka Wijaya" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. PROFILE SECTION (DISESUAIKAN DENGAN CV)
+       ======================================================================== -->
+  <section class="profile-section" id="profile">
+    <div class="container">
+      <div class="profile-card reveal">
+        <!-- Left Vertical Tab Navigation (3 Icon Buttons: User, Rocket, Graduation Cap) -->
+        <div class="profile-tabs-nav" role="tablist" aria-label="Profile Tabs">
+          <!-- Tab 1 Button: User Icon -->
+          <button class="profile-tab-btn active" data-tab="tab-about" role="tab" aria-selected="true" aria-label="About Me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="profile-tab-tooltip">ABOUT ME</span>
+          </button>
+
+          <!-- Tab 2 Button: Rocket Icon -->
+          <button class="profile-tab-btn" data-tab="tab-skill" role="tab" aria-selected="false" aria-label="My Skill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+            <span class="profile-tab-tooltip">MY SKILL</span>
+          </button>
+
+          <!-- Tab 3 Button: Graduation Cap Icon -->
+          <button class="profile-tab-btn" data-tab="tab-edu" role="tab" aria-selected="false" aria-label="Education & Experience">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            <span class="profile-tab-tooltip">EDUCATION &amp; EXP</span>
+          </button>
+        </div>
+
+        <!-- Right Tab Panels -->
+        <div class="profile-tabs-body">
+          <!-- TAB 1: ABOUT ME (Sesuai CV - Fokus Desain PCB & 3D Desain) -->
+          <div class="profile-tab-content active" id="tab-about" role="tabpanel">
+            <div class="tab-header">
+              <h3 class="tab-title">
+                <span class="tab-title-accent"></span>
+                ABOUT ME
+              </h3>
+              <span class="tab-badge">PCB &amp; 3D DESIGN SPECIALIST</span>
+            </div>
+
+            <div class="about-me-container">
+              <div class="about-avatar-ring">
+                <img src="profil.jpg" onerror="this.onerror=null;this.src='profil.jpeg';" alt="Muhammad Bagus Eka Wijaya" />
+              </div>
+
+              <h4 class="about-name">Muhammad Bagus Eka Wijaya</h4>
+              <p class="about-role">Sarjana Terapan Teknik Elektronika — PENS</p>
+
+              <p class="about-bio">
+                Mahasiswa semester 5 <strong>Sarjana Terapan Teknik Elektronika PENS</strong> yang berfokus pada rekayasa perangkat keras, <strong>desain PCB 2D/3D</strong>, dan <strong>desain mekanik 3D</strong>. Terampil dalam perancangan skema dan <em>layout</em> PCB menggunakan <strong>EasyEDA dan KiCAD</strong>, didukung dengan kemampuan desain mekanik 2D/3D presisi menggunakan <strong>Onshape</strong>. Memiliki keahlian praktikal yang kuat dalam teknik <em>wiring</em>, <em>soldering</em>, dan perakitan perangkat keras elektronika, termasuk pengalaman merancang bangun <em>enclosure</em> serta perakitan <em>speaker</em> aktif DIY dan simulasi rangkaian menggunakan <strong>Proteus</strong>.
+              </p>
+
+              <!-- Kemampuan dari CV (Fokus PCB & 3D Design) -->
+              <div class="cv-competencies-grid">
+                <div class="competency-card">
+                  <div class="competency-title">PCB Design (2D &amp; 3D)</div>
+                  <div class="competency-text">
+                    Perancangan skematik, <em>layout</em> PCB 2D/3D, rangkaian elektronika digital &amp; analog, penyolderan, pengujian, integrasi, dan <em>troubleshooting</em>.
+                  </div>
+                </div>
+                <div class="competency-card">
+                  <div class="competency-title">3D Mechanical CAD</div>
+                  <div class="competency-text">
+                    Pemodelan mekanik 2D/3D, perancangan <em>custom enclosure</em> modul elektronik, serta desain <em>box speaker</em> DIY presisi.
+                  </div>
+                </div>
+                <div class="competency-card">
+                  <div class="competency-title">Software &amp; CAD Tools</div>
+                  <div class="competency-text">
+                    KiCad, EasyEDA, Onshape (3D CAD), Proteus, Arduino IDE.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: MY SKILL (Fokus Desain PCB & 3D Desain) -->
+          <div class="profile-tab-content" id="tab-skill" role="tabpanel">
+            <div class="tab-header">
+              <h3 class="tab-title">
+                <span class="tab-title-accent"></span>
+                MY SKILL
+              </h3>
+              <span class="tab-badge">PCB &amp; 3D TECHNICAL PROFICIENCY</span>
+            </div>
+
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">PCB Design 2D &amp; 3D (KiCad, EasyEDA)</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Hardware Assembly, Wiring &amp; Soldering</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">3D Mechanical Modeling &amp; Enclosure (Onshape)</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">PCB Testing, Troubleshooting &amp; Repair</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Analog &amp; Digital Circuit Analysis</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="80%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Circuit Simulation &amp; Microcontroller (Proteus, Arduino IDE)</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: MY EDUCATION & EXPERIENCE (Sesuai CV Lengkap dengan Pengalaman Magang) -->
+          <div class="profile-tab-content" id="tab-edu" role="tabpanel">
+            <div class="tab-header">
+              <h3 class="tab-title">
+                <span class="tab-title-accent"></span>
+                MY EDUCATION &amp; EXPERIENCE
+              </h3>
+              <span class="tab-badge">CURRICULUM VITAE TIMELINE</span>
+            </div>
+
+            <div class="resume-columns">
+              <!-- Column 1: Pendidikan & Pengalaman Organisasi -->
+              <div>
+                <h4 class="resume-group-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                  Pendidikan
+                </h4>
+                <div class="timeline-list" style="margin-bottom: 32px;">
+                  <div class="timeline-card">
+                    <span class="timeline-period">Aug 2024 - Sekarang</span>
+                    <h5 class="timeline-title">Politeknik Elektronika Negeri Surabaya - Surabaya, Indonesia</h5>
+                    <div class="timeline-org">Bachelor of Electronics Engineering (Sarjana Terapan Teknik Elektronika)</div>
+                    <p class="timeline-desc">IPK: <strong>3.34 / 4.00</strong> — Fokus pada perancangan skematik &amp; layout PCB, instrumentasi, dan rekayasa perangkat keras elektronika.</p>
+                  </div>
+
+                  <div class="timeline-card">
+                    <span class="timeline-period">Jul 2021 - Jun 2024</span>
+                    <h5 class="timeline-title">SMK Negeri 2 Bojonegoro - Bojonegoro, Indonesia</h5>
+                    <div class="timeline-org">Vocational High School in Mechatronics (Mekatronika)</div>
+                    <p class="timeline-desc">Dasar perancangan sistem elektronika, gambar teknik mekanik 2D/3D, dan perakitan perangkat keras.</p>
+                  </div>
+                </div>
+
+                <h4 class="resume-group-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  Pengalaman Organisasi
+                </h4>
+                <div class="timeline-list">
+                  <div class="timeline-card">
+                    <span class="timeline-period">Jul 2022 – Jul 2024</span>
+                    <h5 class="timeline-title">Robotics Team - Bojonegoro, Jawa Timur</h5>
+                    <div class="timeline-org">Electronics and Programming Staff</div>
+                    <ul class="timeline-bullets">
+                      <li>Melakukan riset elektronik pada Robot Transporter.</li>
+                      <li>Bekerja sama dengan mekanik dan guru pembimbing untuk persiapan lomba.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 2: Pengalaman Kerja, Magang & Riset -->
+              <div>
+                <h4 class="resume-group-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                  Pengalaman Kerja dan Riset
+                </h4>
+                <div class="timeline-list">
+                  <div class="timeline-card">
+                    <span class="timeline-period">Jan 2024 - Sekarang</span>
+                    <h5 class="timeline-title">Freelance Project - Bojonegoro - Surabaya, Jawa Timur</h5>
+                    <div class="timeline-org">Pekerja Lepas - Electronic Specialist</div>
+                    <ul class="timeline-bullets">
+                      <li>Menawarkan dan mengerjakan desain PCB 2D / 3D serta proyek mikrokontroler dan pemrograman.</li>
+                      <li>Desain sistem audio DIY.</li>
+                      <li>Melakukan servis perbaikan pada alat elektronik rumah tangga dan audio.</li>
+                    </ul>
+                  </div>
+
+                  <div class="timeline-card">
+                    <span class="timeline-period">Feb 2024 - Apr 2024</span>
+                    <h5 class="timeline-title">CV Subur Jaya Variasi - Bojonegoro, Jawa Timur</h5>
+                    <div class="timeline-org">Internship – Electronic Technician</div>
+                    <ul class="timeline-bullets">
+                      <li>Membantu perakitan, wiring pada kelistrikan mobil.</li>
+                      <li>Melakukan instalasi panel android tv, sensor dan kamera mundur, dan memperbaiki sistem audio pada mobil.</li>
+                    </ul>
+                  </div>
+
+                  <div class="timeline-card">
+                    <span class="timeline-period">Nov 2023 – Jan 2024</span>
+                    <h5 class="timeline-title">Dinas Pekerjaan Umum Sumber Daya Air – Bojonegoro, Jawa Timur</h5>
+                    <div class="timeline-org">Internship – Maintenance Technician support</div>
+                    <ul class="timeline-bullets">
+                      <li>Membantu maintenance alat berat seperti Excavator, Bulldozer.</li>
+                      <li>Membantu dalam analisa perbaikan kerusakan pada kontroller dan kelistrikan alat berat.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. MY PORTFOLIO SECTION
+       - Kategori 3D: Hanya isi dari folder yang diawali "3d"
+         (3d-box-speaker-2inch, 3d-modul-bt)
+       - Kategori PCB DESIGN: Seluruh gambar secara urut dari semua folder
+         kecuali folder yang diawali "3d"
+         (7-segmen, ARDUMEGA, node-longsor, robot-api, STM32, voltage-regulator)
+       ======================================================================== -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <!-- Header -->
+      <div class="section-header reveal">
+        <div class="section-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </div>
+        <h2 class="section-title">MY PORTFOLIO</h2>
+        <div class="section-underline"></div>
+        <p class="section-subtitle">
+          Dokumentasi hasil desain mekanik 3D serta perancangan skema &amp; layout PCB 2D/3D.
+        </p>
+      </div>
+
+      <!-- Filter Pill Badges (Fokus Desain PCB & 3D Desain) -->
+      <div class="portfolio-filters reveal" role="tablist" aria-label="Portfolio Filter">
+        <button class="filter-badge active" data-filter="all">ALL WORKS</button>
+        <button class="filter-badge" data-filter="pcb">PCB DESIGN</button>
+        <button class="filter-badge" data-filter="3d">3D DESIGN</button>
+      </div>
+
+      <!-- 3-Column Responsive Portfolio Grid (Populated in exact folder & file order) -->
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LIGHTBOX MODAL POPUP
+       ======================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Portfolio Image Preview">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close Modal">✕</button>
+
+    <button class="lightbox-nav-btn lightbox-prev" id="lightboxPrev" aria-label="Previous Image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="lightbox-content-wrapper">
+      <div class="lightbox-img-container">
+        <img src="" alt="Full Resolution Preview" class="lightbox-img" id="lightboxImg" />
+      </div>
+      <div class="lightbox-caption-bar">
+        <div>
+          <div class="lightbox-caption-sub" id="lightboxSub">CATEGORY</div>
+          <div class="lightbox-caption-title" id="lightboxTitle">Project Title</div>
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+      </div>
+    </div>
+
+    <button class="lightbox-nav-btn lightbox-next" id="lightboxNext" aria-label="Next Image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       5. PRE-FOOTER CTA (INVERTED ASYMMETRIC TRAPEZOID)
+       ======================================================================== -->
+  <section class="prefooter-cta-section">
+    <div class="container">
+      <div class="trapezoid-cta-wrapper reveal">
+        <div class="trapezoid-cta-card">
+          <span class="trapezoid-cta-tag">AVAILABLE FOR FREELANCE &amp; COLLABORATION</span>
+          <h2 class="trapezoid-cta-title">I'M READY FOR YOUR NEXT PROJECT</h2>
+          <a href="#contact" class="btn-hire-white">
+            <span>HIRE ME NOW</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. CONTACT ME SECTION (DISESUAIKAN DENGAN CV)
+       ======================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">CONTACT ME</h2>
+        <div class="section-underline"></div>
+        <p class="section-subtitle">I will be always ready to be contacted anytime</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left Form -->
+        <div class="contact-form-card reveal">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddr" class="form-label">Your Email</label>
+              <input type="email" id="emailAddr" name="emailAddr" class="form-control" placeholder="Enter your email address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="messageText" class="form-label">Message</label>
+              <textarea id="messageText" name="messageText" class="form-control" placeholder="Tell me about your PCB design, hardware prototype, or electronic project..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit-blue">
+              <span>SUBMIT</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <div class="form-feedback" id="formFeedback"></div>
+          </form>
+        </div>
+
+        <!-- Right White Info Card -->
+        <div class="contact-info-card reveal">
+          <div class="info-block">
+            <div class="info-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="info-label">My Phone</div>
+              <div class="info-value">
+                <a href="tel:083192982046">083192982046</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="info-label">Email &amp; Social Media</div>
+              <div class="info-value">
+                <a href="mailto:m.bagusekawijaya@gmail.com">m.bagusekawijaya@gmail.com</a>
+                <div style="font-size:0.82rem; margin-top:4px; font-weight:600; color:#475569;">
+                  <a href="https://www.linkedin.com/in/muhammad-bagus-eka-wijaya-2a7b53438" target="_blank" rel="noopener">
+                    LinkedIn: muhammad-bagus-eka-wijaya
+                  </a>
+                </div>
+                <div style="font-size:0.82rem; margin-top:3px; font-weight:600; color:#475569;">
+                  <a href="https://www.instagram.com/ekawijaya23/" target="_blank" rel="noopener">
+                    Instagram: @ekawijaya23
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="info-label">My Location</div>
+              <div class="info-value">
+                Desa Kauman RT.006 RW.001, Kec. Bojonegoro, Kab. Bojonegoro, Jawa Timur, Indonesia (62113)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. FOOTER WITH OVERLAPPING SCROLL-TO-TOP BUTTON
+       ======================================================================== -->
+  <footer class="site-footer">
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to Top" title="Back to Top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <div class="container">
+      <p class="footer-copyright">
+        &copy; 2026 <strong>Muhammad Bagus Eka Wijaya</strong>. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       VANILLA JAVASCRIPT LOGIC
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ----------------------------------------------------------------------
+         1. DATA PORTOFOLIO SESUAI STRUKTUR FOLDER SECARA URUT
+         - Bagian "3d": Hanya dari folder dengan awalan "3d"
+           (1. 3d-box-speaker-2inch, 2. 3d-modul-bt)
+         - Bagian "pcb": Seluruh gambar secara urut dari semua folder kecuali
+           folder dengan awalan "3d"
+           (3. 7-segmen, 4. ARDUMEGA, 5. node-longsor, 6. robot-api,
+            7. STM32, 8. voltage-regulator)
+         ---------------------------------------------------------------------- */
+      const portfolioItems = [
+        // === KATEGORI PCB DESIGN ===
+        // 1. Folder: STM32 (Baris Paling Awal)
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • STM32',
+          title: 'STM32 — 3D Best View 1',
+          spec: 'STM32/3d-best-view.png • 3D PCB Mikrokontroler STM32',
+          img: 'STM32/3d-best-view.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • STM32',
+          title: 'STM32 — 3D Best View 2',
+          spec: 'STM32/3d-best-view2.png • Sudut Alternatif 3D PCB STM32',
+          img: 'STM32/3d-best-view2.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • STM32',
+          title: 'STM32 — 2D PCB Layout',
+          spec: 'STM32/pcb.png • Layout Routing 2D Development Board STM32',
+          img: 'STM32/pcb.png'
+        },
+
+        // 2. Folder: ARDUMEGA (Lanjut di Bawah STM32)
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • ARDUMEGA',
+          title: 'ARDUMEGA — 3D Best View 1',
+          spec: 'ARDUMEGA/3d-best-view.png • Visualisasi 3D Board ATmega2560',
+          img: 'ARDUMEGA/3d-best-view.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • ARDUMEGA',
+          title: 'ARDUMEGA — 3D Best View 2',
+          spec: 'ARDUMEGA/3d-best-view2.png • Visualisasi Sudut 3D PCB',
+          img: 'ARDUMEGA/3d-best-view2.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • ARDUMEGA',
+          title: 'ARDUMEGA — 2D PCB Layout',
+          spec: 'ARDUMEGA/pcb.png • Desain Skema & Routing Jalur PCB',
+          img: 'ARDUMEGA/pcb.png'
+        },
+
+        // 3. Folder: node-longsor (Lanjut di Bawah ARDUMEGA)
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 3D Master Node',
+          spec: 'node-longsor/3d-master.png • 3D PCB Master Node Telemetri',
+          img: 'node-longsor/3d-master.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 3D Rain Node',
+          spec: 'node-longsor/3d-rain.png • 3D PCB Sensor Curah Hujan',
+          img: 'node-longsor/3d-rain.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 3D Seismic Node',
+          spec: 'node-longsor/3d-seismic.png • 3D PCB Sensor Getaran Tanah',
+          img: 'node-longsor/3d-seismic.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 3D Soil Node',
+          spec: 'node-longsor/3d-soil.png • 3D PCB Sensor Kelembaban Tanah',
+          img: 'node-longsor/3d-soil.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 2D PCB Master',
+          spec: 'node-longsor/pcb-master.png • Layout 2D PCB Master Node',
+          img: 'node-longsor/pcb-master.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 2D PCB Rain',
+          spec: 'node-longsor/pcb-rain.png • Layout 2D PCB Rain Sensor',
+          img: 'node-longsor/pcb-rain.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 2D PCB Seismic',
+          spec: 'node-longsor/pcb-seismic.png • Layout 2D PCB Seismic Sensor',
+          img: 'node-longsor/pcb-seismic.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • node-longsor',
+          title: 'Node Longsor — 2D PCB Soil',
+          spec: 'node-longsor/pcb-soil.png • Layout 2D PCB Soil Sensor',
+          img: 'node-longsor/pcb-soil.png'
+        },
+
+        // 4. Folder: robot-api
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • robot-api',
+          title: 'Robot Api — 3D PCB View',
+          spec: 'robot-api/3d.png • 3D Render Controller Robot Pemadam Api',
+          img: 'robot-api/3d.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • robot-api',
+          title: 'Robot Api — 2D PCB Layout',
+          spec: 'robot-api/pcb.png • Routing Jalur PCB Robot Pemadam Api',
+          img: 'robot-api/pcb.png'
+        },
+
+        // 5. Folder: voltage-regulator
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • voltage-regulator',
+          title: 'Voltage Regulator — 3D PCB View',
+          spec: 'voltage-regulator/3d.png • 3D Render Modul Regulator Tegangan',
+          img: 'voltage-regulator/3d.png'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • voltage-regulator',
+          title: 'Voltage Regulator — 2D PCB Layout',
+          spec: 'voltage-regulator/pcb.png • Layout Jalur Power Regulator',
+          img: 'voltage-regulator/pcb.png'
+        },
+
+        // 6. Folder: 7-segmen
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • 7-segmen',
+          title: '7-Segmen — Bottom Copper (B.Cu)',
+          spec: '7-segmen/b.cu.jpg • Layout Jalur Bawah PCB',
+          img: '7-segmen/b.cu.jpg'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • 7-segmen',
+          title: '7-Segmen — Front Copper (F.Cu)',
+          spec: '7-segmen/f.cu.jpg • Layout Jalur Atas PCB',
+          img: '7-segmen/f.cu.jpg'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • 7-segmen',
+          title: '7-Segmen — Front Silkscreen',
+          spec: '7-segmen/f.silkscreen.jpg • Tata Letak Komponen Silkscreen',
+          img: '7-segmen/f.silkscreen.jpg'
+        },
+        {
+          category: 'pcb',
+          badge: 'PCB DESIGN • 7-segmen',
+          title: '7-Segmen — Hasil Perakitan PCB',
+          spec: '7-segmen/hasil-pcb.jpg • Perakitan Hardware & Penyolderan',
+          img: '7-segmen/hasil-pcb.jpg'
+        },
+
+        // === KATEGORI 3D (Folder diawali "3d") ===
+        {
+          category: '3d',
+          badge: '3D DESIGN • 3d-box-speaker-2inch',
+          title: '3D Box Speaker 2 Inch (View 1)',
+          spec: '3d-box-speaker-2inch/best-view.png • Desain Mekanik 3D Onshape',
+          img: '3d-box-speaker-2inch/best-view.png'
+        },
+        {
+          category: '3d',
+          badge: '3D DESIGN • 3d-box-speaker-2inch',
+          title: '3D Box Speaker 2 Inch (View 2)',
+          spec: '3d-box-speaker-2inch/best-view2.png • Desain Mekanik 3D Onshape',
+          img: '3d-box-speaker-2inch/best-view2.png'
+        },
+        {
+          category: '3d',
+          badge: '3D DESIGN • 3d-modul-bt',
+          title: '3D Modul Bluetooth Audio',
+          spec: '3d-modul-bt/best-view.png • Desain Mekanik 3D Modul Audio DIY',
+          img: '3d-modul-bt/best-view.png'
+        }
+      ];
+
+      const portfolioGrid = document.getElementById('portfolioGrid');
+
+      // Render Portfolio Cards
+      portfolioGrid.innerHTML = portfolioItems
+        .map(
+          (item, index) => `
+        <article class="portfolio-card reveal visible"
+                 data-category="${item.category}"
+                 data-index="${index}"
+                 data-img="${item.img}"
+                 data-title="${item.title}"
+                 data-sub="${item.badge}">
+          <img src="${item.img}" alt="${item.title}" class="portfolio-thumb" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="portfolio-actions">
+              <button class="action-circle-btn btn-zoom" title="Perbesar Gambar" aria-label="Zoom Image">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </button>
+              <a href="${item.img}" target="_blank" rel="noopener" class="action-circle-btn" title="Buka File Gambar Asli" aria-label="Open Image File">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-cat">${item.badge}</span>
+              <h3 class="portfolio-item-title">${item.title}</h3>
+              <p class="portfolio-spec">${item.spec}</p>
+            </div>
+          </div>
+        </article>
+      `
+        )
+        .join('') + `
+        <div class="portfolio-empty-state" id="portfolioEmptyState">
+          Belum ada dokumen sertifikat pada folder lokal. Pilih tab <strong>ALL WORKS</strong>, <strong>PCB DESIGN</strong>, atau <strong>3D</strong> untuk melihat karya.
+        </div>
+      `;
+
+      /* ----------------------------------------------------------------------
+         2. STICKY NAVBAR & ACTIVE LINK HIGHLIGHT ON SCROLL
+         ---------------------------------------------------------------------- */
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id]');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinksContainer = document.getElementById('navLinks');
+      const plusToggleBtn = document.getElementById('plusToggleBtn');
+      const quickPanel = document.getElementById('quickPanel');
+
+      function handleScroll() {
+        const scrollY = window.scrollY;
+
+        if (scrollY > 40) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+
+        let currentSectionId = 'homepage';
+        sections.forEach((sec) => {
+          const top = sec.offsetTop - 140;
+          const height = sec.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            currentSectionId = sec.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('mobile-open');
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          navLinksContainer.classList.remove('mobile-open');
+          quickPanel.classList.remove('open');
+        });
+      });
+
+      plusToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        quickPanel.classList.toggle('open');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!quickPanel.contains(e.target) && e.target !== plusToggleBtn) {
+          quickPanel.classList.remove('open');
+        }
+      });
+
+      /* ----------------------------------------------------------------------
+         3. PROFILE TABS & ANIMATED SKILL PROGRESS BARS
+         ---------------------------------------------------------------------- */
+      const tabButtons = document.querySelectorAll('.profile-tab-btn');
+      const tabContents = document.querySelectorAll('.profile-tab-content');
+      const skillFills = document.querySelectorAll('.skill-bar-fill');
+
+      function animateSkillBars() {
+        skillFills.forEach((bar) => {
+          bar.style.width = '0%';
+          setTimeout(() => {
+            bar.style.width = bar.getAttribute('data-width');
+          }, 90);
+        });
+      }
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab');
+
+          tabButtons.forEach((b) => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          tabContents.forEach((panel) => {
+            panel.classList.remove('active');
+            if (panel.id === targetId) {
+              panel.classList.add('active');
+            }
+          });
+
+          if (targetId === 'tab-skill') {
+            animateSkillBars();
+          }
+        });
+      });
+
+      /* ----------------------------------------------------------------------
+         4. PORTFOLIO CATEGORY FILTERING
+         ---------------------------------------------------------------------- */
+      const filterBadges = document.querySelectorAll('.filter-badge');
+      const portfolioCards = Array.from(document.querySelectorAll('.portfolio-card'));
+      const portfolioEmptyState = document.getElementById('portfolioEmptyState');
+
+      filterBadges.forEach((badge) => {
+        badge.addEventListener('click', () => {
+          const filterValue = badge.getAttribute('data-filter');
+
+          filterBadges.forEach((b) => b.classList.remove('active'));
+          badge.classList.add('active');
+
+          let visibleCount = 0;
+
+          portfolioCards.forEach((card) => {
+            const cardCat = card.getAttribute('data-category');
+            if (filterValue === 'all' || cardCat === filterValue) {
+              card.classList.remove('hidden-card');
+              card.style.animation = 'none';
+              card.offsetHeight;
+              card.style.animation = 'fadeTab 0.38s ease forwards';
+              visibleCount++;
+            } else {
+              card.classList.add('hidden-card');
+            }
+          });
+
+          portfolioEmptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+      });
+
+      /* ----------------------------------------------------------------------
+         5. PORTFOLIO LIGHTBOX MODAL
+         ---------------------------------------------------------------------- */
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxSub = document.getElementById('lightboxSub');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxPrev = document.getElementById('lightboxPrev');
+      const lightboxNext = document.getElementById('lightboxNext');
+
+      let currentLightboxIndex = 0;
+
+      function getVisibleCards() {
+        return portfolioCards.filter((card) => !card.classList.contains('hidden-card'));
+      }
+
+      function openLightbox(cardIndexInVisible) {
+        const visibleCards = getVisibleCards();
+        if (!visibleCards.length) return;
+
+        currentLightboxIndex = (cardIndexInVisible + visibleCards.length) % visibleCards.length;
+        const card = visibleCards[currentLightboxIndex];
+
+        const imgSrc = card.getAttribute('data-img');
+        const title = card.getAttribute('data-title');
+        const sub = card.getAttribute('data-sub');
+
+        lightboxImg.src = imgSrc;
+        lightboxImg.alt = title;
+        lightboxTitle.textContent = title;
+        lightboxSub.textContent = sub;
+        lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${visibleCards.length}`;
+
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      portfolioCards.forEach((card) => {
+        const zoomBtn = card.querySelector('.btn-zoom');
+        zoomBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const visibleCards = getVisibleCards();
+          const visibleIdx = visibleCards.indexOf(card);
+          openLightbox(visibleIdx !== -1 ? visibleIdx : 0);
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(currentLightboxIndex - 1);
+      });
+
+      lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(currentLightboxIndex + 1);
+      });
+
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightboxModal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') openLightbox(currentLightboxIndex - 1);
+        if (e.key === 'ArrowRight') openLightbox(currentLightboxIndex + 1);
+      });
+
+      /* ----------------------------------------------------------------------
+         6. CONTACT FORM SUBMISSION HANDLER
+         ---------------------------------------------------------------------- */
+      const contactForm = document.getElementById('contactForm');
+      const formFeedback = document.getElementById('formFeedback');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('emailAddr').value.trim();
+        const message = document.getElementById('messageText').value.trim();
+
+        if (!name || !email || !message) {
+          formFeedback.className = 'form-feedback';
+          formFeedback.style.display = 'block';
+          formFeedback.style.background = 'rgba(239, 68, 68, 0.16)';
+          formFeedback.style.border = '1px solid rgba(239, 68, 68, 0.45)';
+          formFeedback.style.color = '#fca5a5';
+          formFeedback.textContent = 'Mohon lengkapi seluruh kolom Full Name, Your Email, dan Message.';
+          return;
+        }
+
+        formFeedback.className = 'form-feedback success';
+        formFeedback.style.display = '';
+        formFeedback.textContent = `Terima kasih, ${name}! Pesan Anda telah siap dikirim ke m.bagusekawijaya@gmail.com.`;
+
+        const subject = encodeURIComponent(`Project Inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:m.bagusekawijaya@gmail.com?subject=${subject}&body=${body}`;
+
+        contactForm.reset();
+      });
+
+      /* ----------------------------------------------------------------------
+         7. SCROLL TO TOP BUTTON
+         ---------------------------------------------------------------------- */
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* ----------------------------------------------------------------------
+         8. INTERSECTION OBSERVER FOR SCROLL REVEAL
+         ---------------------------------------------------------------------- */
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      revealElements.forEach((el) => revealObserver.observe(el));
+
+      /* ----------------------------------------------------------------------
+         9. INTERACTIVE ELECTRONIC PCB CIRCUIT & PARTICLE CANVAS BACKGROUND
+         ---------------------------------------------------------------------- */
+      const canvas = document.getElementById('bgCircuitCanvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        const mouse = { x: -9999, y: -9999, radius: 170 };
+        window.addEventListener('mousemove', (e) => {
+          mouse.x = e.clientX;
+          mouse.y = e.clientY;
+        }, { passive: true });
+
+        window.addEventListener('mouseleave', () => {
+          mouse.x = -9999;
+          mouse.y = -9999;
+        });
+
+        window.addEventListener('resize', () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+          initCircuitParticles();
+        });
+
+        let nodes = [];
+        let pulses = [];
+        const gridSize = 64;
+
+        // PCB directions: 0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°
+        const pcbAngles = [
+          0,
+          Math.PI / 4,
+          Math.PI / 2,
+          (3 * Math.PI) / 4,
+          Math.PI,
+          (5 * Math.PI) / 4,
+          (3 * Math.PI) / 2,
+          (7 * Math.PI) / 4
+        ];
+
+        function createPulse() {
+          const startX = Math.floor(Math.random() * (width / gridSize)) * gridSize;
+          const startY = Math.floor(Math.random() * (height / gridSize)) * gridSize;
+          const angle = pcbAngles[Math.floor(Math.random() * pcbAngles.length)];
+          const speed = 1.6 + Math.random() * 1.8;
+          return {
+            x: startX,
+            y: startY,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            trail: [],
+            maxTrail: 22 + Math.floor(Math.random() * 18),
+            life: 0,
+            maxLife: 140 + Math.floor(Math.random() * 160),
+            turnCooldown: 25,
+            color: Math.random() > 0.35 ? '#3b82f6' : '#38bdf8'
+          };
+        }
+
+        function initCircuitParticles() {
+          const nodeCount = Math.min(58, Math.max(24, Math.floor((width * height) / 26000)));
+          nodes = [];
+          for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              vx: (Math.random() - 0.5) * 0.45,
+              vy: (Math.random() - 0.5) * 0.45,
+              radius: 1.6 + Math.random() * 2,
+              phase: Math.random() * Math.PI * 2,
+              isSquarePad: Math.random() > 0.65
+            });
+          }
+
+          const pulseCount = Math.min(16, Math.max(7, Math.floor(width / 120)));
+          pulses = [];
+          for (let i = 0; i < pulseCount; i++) {
+            pulses.push(createPulse());
+          }
+        }
+
+        initCircuitParticles();
+
+        function drawSubtleGrid() {
+          ctx.strokeStyle = 'rgba(59, 130, 246, 0.038)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          for (let x = 0; x < width; x += gridSize) {
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, height);
+          }
+          for (let y = 0; y < height; y += gridSize) {
+            ctx.moveTo(0, y);
+            ctx.lineTo(width, y);
+          }
+          ctx.stroke();
+
+          // Subtle solder crosshairs on grid intersections
+          ctx.fillStyle = 'rgba(96, 165, 250, 0.09)';
+          for (let x = gridSize; x < width; x += gridSize * 2) {
+            for (let y = gridSize; y < height; y += gridSize * 2) {
+              ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
+            }
+          }
+        }
+
+        function animateCircuitBg() {
+          ctx.clearRect(0, 0, width, height);
+
+          // 1. Draw CAD blueprint grid
+          drawSubtleGrid();
+
+          // 2. Update & draw PCB 45°/90° data signal pulses (electrons)
+          for (let i = 0; i < pulses.length; i++) {
+            const p = pulses[i];
+            p.trail.push({ x: p.x, y: p.y });
+            if (p.trail.length > p.maxTrail) {
+              p.trail.shift();
+            }
+
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life++;
+            p.turnCooldown--;
+
+            // Occasional 45-degree PCB corner routing turn
+            if (p.turnCooldown <= 0 && Math.random() < 0.045) {
+              const speed = Math.hypot(p.vx, p.vy);
+              const currentAngle = Math.atan2(p.vy, p.vx);
+              const turn = (Math.random() > 0.5 ? 1 : -1) * (Math.PI / 4);
+              const newAngle = currentAngle + turn;
+              p.vx = Math.cos(newAngle) * speed;
+              p.vy = Math.sin(newAngle) * speed;
+              p.turnCooldown = 28;
+            }
+
+            // Draw glowing PCB signal trail
+            if (p.trail.length > 2) {
+              for (let t = 1; t < p.trail.length; t++) {
+                const ratio = t / p.trail.length;
+                ctx.beginPath();
+                ctx.moveTo(p.trail[t - 1].x, p.trail[t - 1].y);
+                ctx.lineTo(p.trail[t].x, p.trail[t].y);
+                ctx.strokeStyle = `rgba(59, 130, 246, ${ratio * 0.42})`;
+                ctx.lineWidth = 1.8;
+                ctx.stroke();
+              }
+            }
+
+            // Draw glowing head of signal packet
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2.3, 0, Math.PI * 2);
+            ctx.fillStyle = '#93c5fd';
+            ctx.shadowColor = p.color;
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Respawn pulse if out of bounds or life ended
+            if (
+              p.life >= p.maxLife ||
+              p.x < -40 ||
+              p.x > width + 40 ||
+              p.y < -40 ||
+              p.y > height + 40
+            ) {
+              pulses[i] = createPulse();
+            }
+          }
+
+          // 3. Update & draw floating electronic nodes + connections
+          for (let i = 0; i < nodes.length; i++) {
+            const n = nodes[i];
+            n.x += n.vx;
+            n.y += n.vy;
+            n.phase += 0.025;
+
+            if (n.x < 0 || n.x > width) n.vx *= -1;
+            if (n.y < 0 || n.y > height) n.vy *= -1;
+
+            const pulseAlpha = 0.35 + Math.sin(n.phase) * 0.22;
+
+            // Connect nearby nodes
+            for (let j = i + 1; j < nodes.length; j++) {
+              const n2 = nodes[j];
+              const dx = n.x - n2.x;
+              const dy = n.y - n2.y;
+              const dist = Math.hypot(dx, dy);
+
+              if (dist < 145) {
+                const alpha = (1 - dist / 145) * 0.18;
+                ctx.beginPath();
+                ctx.moveTo(n.x, n.y);
+                ctx.lineTo(n2.x, n2.y);
+                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+              }
+            }
+
+            // Interactive mouse connection
+            const mdx = n.x - mouse.x;
+            const mdy = n.y - mouse.y;
+            const mDist = Math.hypot(mdx, mdy);
+            if (mDist < mouse.radius) {
+              const mAlpha = (1 - mDist / mouse.radius) * 0.45;
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(96, 165, 250, ${mAlpha})`;
+              ctx.lineWidth = 1.2;
+              ctx.stroke();
+            }
+
+            // Draw node (IC square pad or solder circle via)
+            ctx.fillStyle = `rgba(96, 165, 250, ${pulseAlpha})`;
+            if (n.isSquarePad) {
+              const s = n.radius * 2.1;
+              ctx.fillRect(n.x - s / 2, n.y - s / 2, s, s);
+            } else {
+              ctx.beginPath();
+              ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          }
+
+          requestAnimationFrame(animateCircuitBg);
+        }
+
+        requestAnimationFrame(animateCircuitBg);
+      }
+    });
+  </script>
+</body>
+</html>
